@@ -124,11 +124,16 @@
       <Project>{2A33B2D0-66FF-6F07-C1DB-52C721F499AB}</Project>
       <Name>GGJ2017.Plugins</Name>
     </ProjectReference>
+    <ProjectReference Include="GGJ2017.csproj">
+      <Project>{B54A66E2-ADB5-4996-8731-1F2D0622DB25}</Project>
+      <Name>GGJ2017</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Shaders\TextureMask.shader" />
     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
