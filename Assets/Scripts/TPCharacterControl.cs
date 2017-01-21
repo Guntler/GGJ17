@@ -9,7 +9,7 @@ public class TPCharacterControl : MonoBehaviour {
     private Vector3 m_CamForward;             // The current forward direction of the camera
     private Vector3 m_Move;
     private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
-    private bool m_Attack;
+    private bool m_Sprint;
     private GameObject m_Target;
 
     private Animation m_Animation;
@@ -52,12 +52,17 @@ public class TPCharacterControl : MonoBehaviour {
         {
             m_Jump = Input.GetButtonDown("Jump");
         }
-        if(!m_Attack)
+
+        if (Input.GetButtonDown("Sprint"))
         {
-            m_Attack = Input.GetButtonDown("Fire1");
+            m_Sprint = true;
+        }
+        else if(Input.GetButtonUp("Sprint"))
+        {
+            m_Sprint = false;
         }
 
-        if(m_Target)
+        if (m_Target)
         {
             if((m_Target.transform.position - transform.position).magnitude>5.0f)
             {
@@ -89,11 +94,6 @@ public class TPCharacterControl : MonoBehaviour {
         v.z = (cos * tz) + (sin * ty);
 
         return v;
-    }
-
-    void StopAttack()
-    {
-        m_Attack = false;
     }
 
     // Fixed update is called in sync with physics
@@ -178,23 +178,6 @@ public class TPCharacterControl : MonoBehaviour {
             }
         }
 
-        if (m_Attack)
-        {
-            if (m_AttackCooldownCount <= 0.0f)
-            {
-                //GetComponentInChildren<SwordContainerBehavior>().AlignHitboxes();
-                //GetComponent<AttackControl>().DoAttack();
-                Invoke("StopAttack", 0.5f);
-                m_AttackCooldownCount = m_AttackCooldown;
-            }
-            else
-            {
-                m_AttackCooldownCount -= Time.deltaTime;
-            }
-            //StartCoroutine(Delay(10.0f));
-            
-        }
-        else
         {
             // read inputs
             float h = Input.GetAxis("Horizontal") * 5f;
@@ -215,7 +198,7 @@ public class TPCharacterControl : MonoBehaviour {
             }
             //print(m_Move);
             // pass all parameters to the character control script
-            m_Character.Move(m_Move, crouch, m_Jump, m_Target);
+            m_Character.Move(m_Move, crouch, m_Jump, m_Sprint, m_Target);
             if (h != 0 || v != 0)
             {
                 if(m_Target != null)

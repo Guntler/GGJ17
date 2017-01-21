@@ -217,7 +217,7 @@ Transform:
   m_PrefabInternal: {fileID: 471306725}
   m_GameObject: {fileID: 123212058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 25, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -317,7 +317,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4831354604205350, guid: 0a01feccf2ab0cf4c888ebaf9583c0ee, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4831354604205350, guid: 0a01feccf2ab0cf4c888ebaf9583c0ee, type: 2}
       propertyPath: m_LocalPosition.z
@@ -351,6 +351,10 @@ Prefab:
     - target: {fileID: 1678223639155166, guid: 0a01feccf2ab0cf4c888ebaf9583c0ee, type: 2}
       propertyPath: m_Name
       value: WaveSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678223639155166, guid: 0a01feccf2ab0cf4c888ebaf9583c0ee, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a01feccf2ab0cf4c888ebaf9583c0ee, type: 2}
