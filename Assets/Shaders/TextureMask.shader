@@ -3,7 +3,7 @@
 		_MainTex("Base (RGB)", 2D) = "white" {}
 		_Alpha("Alpha (A)", 2D) = "black" {}
 		}
-			SubShader{
+		SubShader{
 			Tags{ "RenderType" = "Transparent" "Queue" = "Transparent" }
 
 			ZWrite Off
@@ -12,12 +12,12 @@
 			ColorMask RGB
 
 			Pass{
-			SetTexture[_MainTex]{
-			Combine texture
-		}
-			SetTexture[_Alpha]{
-			Combine previous, texture
-		}
+				SetTexture[_MainTex]{
+				Combine texture
+			}
+				SetTexture[_Alpha]{
+				Combine previous, texture
+			}
 		}
 	}
 }
