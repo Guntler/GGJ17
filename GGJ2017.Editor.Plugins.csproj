@@ -141,6 +141,7 @@
     <None Include="Assets\External Assets\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\External Assets\ToonShading\Shaders\ToonLit.shader" />
     <None Include="Assets\External Assets\ToonShading\Shaders\ToonLitOutline.shader" />
+    <None Include="Assets\Shaders\FoWMaskShader.shader" />
     <None Include="Assets\Shaders\TextureMask.shader" />
     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
