@@ -142,6 +142,20 @@ public class WaveFoV : MonoBehaviour {
         viewMesh.vertices = vertices;
         viewMesh.triangles = triangles;
         viewMesh.RecalculateNormals();
+
+        print(viewMeshFilter.GetComponent<Renderer>().bounds);
+        Texture2D texture = new Texture2D(500, 500);
+        //Apply to alpha map
+
+        for (int y = 0; y < texture.height; y++)
+        {
+            for (int x = 0; x < texture.width; x++)
+            {
+                Color color = ((x & y) != 0 ? Color.white : Color.black);
+                texture.SetPixel(x, y, color);
+            }
+        }
+        texture.Apply();
     }
 
     ViewCastInfo ViewCast(float globalAngle)
@@ -175,18 +189,6 @@ public class WaveFoV : MonoBehaviour {
                         intersections.Add(point);
                     }
                 }
-                Texture2D texture = new Texture2D(500, 500);
-                //Apply to alpha map
-
-                for (int y = 0; y < texture.height; y++)
-                {
-                    for (int x = 0; x < texture.width; x++)
-                    {
-                        Color color = ((x & y) != 0 ? Color.white : Color.gray);
-                        texture.SetPixel(x, y, color);
-                    }
-                }
-                texture.Apply();
             }
         }
     }
