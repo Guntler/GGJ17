@@ -6,6 +6,7 @@ public class WaveBehaviour : MonoBehaviour {
 
     public float TimeToLive;
     public float ExpandRate;
+    public GameObject Spawner;
 
     private float elapsedTime = 0;
 	// Use this for initialization
@@ -25,5 +26,8 @@ public class WaveBehaviour : MonoBehaviour {
         float newScaleX = transform.localScale.x + Time.deltaTime * ExpandRate * transform.localScale.x;
         float newScaleZ = transform.localScale.z + Time.deltaTime * ExpandRate * transform.localScale.z;
         transform.localScale = new Vector3(newScaleX, transform.localScale.y, newScaleZ);
+
+        if (Spawner != null)
+            transform.position = Spawner.transform.position;
 	}
 }

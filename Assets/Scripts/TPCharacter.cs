@@ -63,7 +63,7 @@ public class TPCharacter : MonoBehaviour {
         m_NormForward = RotateX(transform.GetChild(0).GetChild(0).forward, -40);
     }
 
-    public void Move(Vector3 move, bool crouch, bool jump, GameObject target)
+    public void Move(Vector3 move, bool crouch, bool jump, bool sprint, GameObject target)
     {
         m_Target = target;
         // convert the world relative moveInput vector into a local-relative
@@ -92,9 +92,19 @@ public class TPCharacter : MonoBehaviour {
         move.y = 0;
         if (m_IsGrounded && !m_IsFalling)
         {
-            m_Rigidbody.velocity += move*1.5f;
+           if (sprint)
+            {
+                m_Rigidbody.velocity += move * 5f;
+                m_Rigidbody.velocity = Vector3.ClampMagnitude(m_Rigidbody.velocity, 15.0f);
+            }
+           else
+            {
+                m_Rigidbody.velocity += move * 1.5f;
+                m_Rigidbody.velocity = Vector3.ClampMagnitude(m_Rigidbody.velocity, 5.0f);
+            }
+              
 
-            m_Rigidbody.velocity = Vector3.ClampMagnitude(m_Rigidbody.velocity, 5.0f);
+            
 
             Vector3 tiltedDir = RotateX(move, -40);
             RotateCharacter(tiltedDir);
