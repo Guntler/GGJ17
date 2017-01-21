@@ -25,7 +25,11 @@ public class BulletBehaviour : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.GetComponent<HealthBehaviour>() != null)
+        {
             other.gameObject.GetComponent<HealthBehaviour>().Health--;
+            print("atingiu");
+        }
+
         Destroy(gameObject);
     }
 }

@@ -26,8 +26,8 @@ public class LungeComponent : MonoBehaviour {
 	void Update () {
         var lungeDir = Vector3.zero;
         // read inputs
-        float h = Input.GetAxis("Horizontal") * 5f;
-        float v = Input.GetAxis("Vertical") * 5f;
+        float h = Input.GetAxis("Horizontal_Mnst") * 5f;
+        float v = Input.GetAxis("Vertical_Mnst") * 5f;
 
         if (m_Cam != null)
         {
@@ -45,6 +45,7 @@ public class LungeComponent : MonoBehaviour {
 
         if (Lunging)
         {
+            print(gameObject.tag);
             var rigid = gameObject.GetComponent<Rigidbody>();
 
             lungeDirection.Normalize();
@@ -78,7 +79,8 @@ public class LungeComponent : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<HealthBehaviour>() != null)
+        print("collided");
+        if (Lunging && other.gameObject.GetComponent<HealthBehaviour>() != null)
             other.gameObject.GetComponent<HealthBehaviour>().Health -= Damage;
         Lunging = false;
     }

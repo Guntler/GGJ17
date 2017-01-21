@@ -18,6 +18,7 @@ public class TPCharacterControl : MonoBehaviour {
     Quaternion originalCamRot;
     private float m_AttackCooldownCount = 0.0f;
 
+    public bool isMonster = false;
     public GameObject WaveSpawner;
     public float BaseSpawnInterval = 0.5f;
     private float elapsedTime = 0;
@@ -53,11 +54,11 @@ public class TPCharacterControl : MonoBehaviour {
             m_Jump = Input.GetButtonDown("Jump");
         }
 
-        if (Input.GetButtonDown("Sprint"))
+        if (Input.GetButtonDown("Sprint") && !isMonster)
         {
             m_Sprint = true;
         }
-        else if(Input.GetButtonUp("Sprint"))
+        else if(Input.GetButtonUp("Sprint") && !isMonster)
         {
             m_Sprint = false;
         }
@@ -183,6 +184,12 @@ public class TPCharacterControl : MonoBehaviour {
             float h = Input.GetAxis("Horizontal") * 5f;
             float v = Input.GetAxis("Vertical") * 5f;
             bool crouch = Input.GetKey(KeyCode.C);
+
+            if(isMonster)
+            {
+                h = Input.GetAxis("Horizontal_Mnst") * 5f;
+                v = Input.GetAxis("Vertical_Mnst") * 5f;
+            }
 
             // calculate move direction to pass to character
             if (m_Cam != null)
