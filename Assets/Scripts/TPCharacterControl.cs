@@ -10,7 +10,6 @@ public class TPCharacterControl : MonoBehaviour {
     private Vector3 m_Move;
     private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
     private bool m_Attack;
-    private bool m_Sprint;
     private GameObject m_Target;
 
     private Animation m_Animation;
@@ -22,7 +21,6 @@ public class TPCharacterControl : MonoBehaviour {
     public GameObject WaveSpawner;
     public float BaseSpawnInterval = 0.5f;
     private float elapsedTime = 0;
-    
 
     public float m_CameraLockOnSpeed = 5.0f;
     // Use this for initialization
@@ -37,16 +35,16 @@ public class TPCharacterControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         elapsedTime += Time.deltaTime;
-        var velocity = GetComponent<Rigidbody>().velocity;
-        if (elapsedTime > BaseSpawnInterval && velocity.magnitude > 0.1)
+        var speed = GetComponent<Rigidbody>().velocity.magnitude;
+        //print(speed);
+        if (elapsedTime > BaseSpawnInterval && speed > 0.1)
         {
-            var spawnerPos = new Vector3(transform.position.x , 25, transform.position.z);
+            var spawnerPos = new Vector3(transform.position.x, 1, transform.position.z);
             var spawner = Instantiate(WaveSpawner, spawnerPos, new Quaternion(0, 0, 0, 0)) as GameObject;
 
             var behaviour = spawner.GetComponent<SpawnerBehaviour>();
-            behaviour.TimeToLive += behaviour.TimeToLive + velocity.magnitude * 0.05f;
-            behaviour.WaveTimeToLive += velocity.magnitude * 0.02f;
-            behaviour.WaveExpandRate += behaviour.WaveExpandRate + velocity.magnitude * 0.1f;
+            behaviour.WaveTimeToLive += behaviour.WaveTimeToLive * speed * 0.1f;
+            behaviour.WaveExpandRate += behaviour.WaveExpandRate * speed * 0.1f;
             elapsedTime = 0;
         }
 
@@ -57,15 +55,6 @@ public class TPCharacterControl : MonoBehaviour {
         if(!m_Attack)
         {
             m_Attack = Input.GetButtonDown("Fire1");
-        }
-        
-        if(Input.GetButtonDown("Sprint"))
-        {
-            m_Sprint = true;
-        }
-        else if(Input.GetButtonUp("Sprint"))
-        {
-            m_Sprint = false;
         }
 
         if(m_Target)
@@ -226,7 +215,7 @@ public class TPCharacterControl : MonoBehaviour {
             }
             //print(m_Move);
             // pass all parameters to the character control script
-            m_Character.Move(m_Move, crouch, m_Jump, m_Sprint, m_Target);
+            m_Character.Move(m_Move, crouch, m_Jump, m_Target);
             if (h != 0 || v != 0)
             {
                 if(m_Target != null)

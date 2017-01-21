@@ -9,14 +9,9 @@ public class SpawnerBehaviour : MonoBehaviour {
     public float SpawnInterval;
     public float WaveTimeToLive;
     public float WaveExpandRate;
-    public GameObject Origin;
 
     private float elapsedTime = 0;
     private float totalTime = 0;
-    private bool firstWave = true;
-    private bool firstUpdate = true;
-    private float defaultWaveTimeToLive;
-    private float defaultWaveExpandRate;
 
 	// Use this for initialization
 	void Start () {
@@ -28,52 +23,20 @@ public class SpawnerBehaviour : MonoBehaviour {
         elapsedTime += Time.deltaTime;
         totalTime += Time.deltaTime;
 
-        if(Origin != null)
+        if(elapsedTime > SpawnInterval)
         {
-            var velocity = Origin.GetComponent<Rigidbody>().velocity;
+            GameObject waveObject = Instantiate(Wave, transform.position, transform.rotation) as GameObject;
+            //waveObject.transform.Rotate(new Vector3(1, 0, 0), 90);
+            var behaviour = waveObject.GetComponent<WaveBehaviour>();
+            behaviour.TimeToLive = WaveTimeToLive;
+            behaviour.ExpandRate = WaveExpandRate;
 
-            if(firstUpdate)
-            {
-                defaultWaveTimeToLive = WaveTimeToLive;
-                defaultWaveExpandRate = WaveExpandRate;
-                firstUpdate = false;
-            }
-
-            WaveTimeToLive = defaultWaveTimeToLive + velocity.magnitude * 0.02f;
-            WaveExpandRate = defaultWaveExpandRate + defaultWaveExpandRate + velocity.magnitude * 0.1f;
-
-
-            if (elapsedTime > SpawnInterval && velocity.magnitude > 0.1)
-            {
-                SpawnWave();
-                elapsedTime = 0;
-            }
-
-            transform.position = new Vector3(Origin.transform.position.x, transform.position.y, Origin.transform.position.z);
-        }
-        else
-        {
-            if (elapsedTime > SpawnInterval || firstWave)
-            {
-                firstWave = false;
-                SpawnWave();
-
-                elapsedTime = 0;
-            }
+            elapsedTime = 0;
         }
 
-        if (TimeToLive > 0 && totalTime > TimeToLive)
+        if (totalTime > TimeToLive)
         {
             Destroy(gameObject);
         }
-    }
-
-    private void SpawnWave()
-    {
-        GameObject waveObject = Instantiate(Wave, transform.position, transform.rotation) as GameObject;
-        var behaviour = waveObject.GetComponent<WaveBehaviour>();
-        behaviour.Spawner = gameObject;
-        behaviour.TimeToLive = WaveTimeToLive;
-        behaviour.ExpandRate = WaveExpandRate;
     }
 }
