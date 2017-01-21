@@ -12,9 +12,6 @@ public class TPCharacterControl : MonoBehaviour {
     private bool m_Attack;
     private GameObject m_Target;
 
-    public GameObject ReticlePrefab;
-
-    private GameObject ReticleObject;
     private Animation m_Animation;
     public float m_AttackCooldown = 1.0f;
     Vector3 originalCamPos;
@@ -47,10 +44,6 @@ public class TPCharacterControl : MonoBehaviour {
             if((m_Target.transform.position - transform.position).magnitude>5.0f)
             {
                 m_Target = null;
-                if (ReticleObject)
-                {
-                    Destroy(ReticleObject);
-                }
             }
             else
             {
@@ -106,27 +99,20 @@ public class TPCharacterControl : MonoBehaviour {
                             if(hitInfo.transform.gameObject.Equals(m_Target))
                             {
                                 m_Target = null;
-                                Destroy(ReticleObject);
                             }
                             else
                             {
                                 m_Target = hitInfo.transform.gameObject;
-                                if (ReticleObject)
-                                    Destroy(ReticleObject);
-                                ReticleObject = (GameObject)Instantiate(ReticlePrefab, hitInfo.transform.position - (new Vector3(0, -2, 1)), transform.rotation);
-                                Debug.Log("It's working!");
                             }
                         }
                         else
                         {
                             m_Target = null;
-                            Destroy(ReticleObject);
                         }
                     }
                     else
                     {
                         m_Target = null;
-                        Destroy(ReticleObject);
                         Debug.Log("No hit");
                     }
                     Debug.Log("Mouse is down");
@@ -159,21 +145,16 @@ public class TPCharacterControl : MonoBehaviour {
                         if (hitInfo.transform.gameObject.Equals(m_Target))
                         {
                             m_Target = null;
-                            Destroy(ReticleObject);
                         }
                         else
                         {
                             m_Target = hitInfo.transform.gameObject;
-                            if (ReticleObject)
-                                Destroy(ReticleObject);
-                            ReticleObject = (GameObject)Instantiate(ReticlePrefab, hitInfo.transform.position - (new Vector3(0, -2, 1)), transform.rotation);
                         }
                     }
                     else
                     {
                         print("No targets found");
                         m_Target = null;
-                        Destroy(ReticleObject);
                     }
                 }
             }

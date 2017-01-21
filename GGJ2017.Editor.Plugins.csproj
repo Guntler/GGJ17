@@ -118,6 +118,9 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="Assembly-UnityScript">
+      <HintPath>Library\ScriptAssemblies\Assembly-UnityScript.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="GGJ2017.Plugins.csproj">
@@ -133,6 +136,11 @@
     <Compile Include="Assets\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\External Assets\Shader\WrapLambert.shader" />
+    <None Include="Assets\External Assets\ToonShading\Shaders\ToonBasic.shader" />
+    <None Include="Assets\External Assets\ToonShading\Shaders\ToonBasicOutline.shader" />
+    <None Include="Assets\External Assets\ToonShading\Shaders\ToonLit.shader" />
+    <None Include="Assets\External Assets\ToonShading\Shaders\ToonLitOutline.shader" />
     <None Include="Assets\Shaders\TextureMask.shader" />
     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
