@@ -18,6 +18,10 @@ public class TPCharacterControl : MonoBehaviour {
     Quaternion originalCamRot;
     private float m_AttackCooldownCount = 0.0f;
 
+    public GameObject WaveSpawner;
+    public float BaseSpawnInterval = 0.5f;
+    private float elapsedTime = 0;
+
     public float m_CameraLockOnSpeed = 5.0f;
     // Use this for initialization
     void Start () {
@@ -30,6 +34,20 @@ public class TPCharacterControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        elapsedTime += Time.deltaTime;
+        var speed = GetComponent<Rigidbody>().velocity.magnitude;
+        print(speed);
+        if (elapsedTime > BaseSpawnInterval && speed > 0.1)
+        {
+            var spawnerPos = new Vector3(transform.position.x, 25, transform.position.z);
+            var spawner = Instantiate(WaveSpawner, spawnerPos, new Quaternion(0, 0, 0, 0)) as GameObject;
+
+            var behaviour = spawner.GetComponent<SpawnerBehaviour>();
+            behaviour.WaveTimeToLive += behaviour.WaveTimeToLive * speed * 0.1f;
+            behaviour.WaveExpandRate += behaviour.WaveExpandRate * speed * 0.1f;
+            elapsedTime = 0;
+        }
+
         if (!m_Jump)
         {
             m_Jump = Input.GetButtonDown("Jump");
