@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class TPCharacter : MonoBehaviour {
 
@@ -40,9 +41,21 @@ public class TPCharacter : MonoBehaviour {
     CapsuleCollider m_capsuleCol;
     BoxCollider m_boxCol;
 
+    public List<AudioClip> NormalSteps = new List<AudioClip>();
+    public List<AudioClip> RunningSteps = new List<AudioClip>();
+    public List<AudioClip> WaterSteps = new List<AudioClip>();
+
+    AudioSource srcSFX;
+    public bool isOverPuddle = false;
+    bool m_isSprinting;
+    Vector3 m_move;
+
+    float TimeBetweenFootsteps = 0.3f;
+    float elapsedTimeFootstep = 0;
 
     // Use this for initialization
     void Start () {
+        srcSFX = GetComponent<AudioSource>();
         //m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
         m_boxCol = GetComponent<BoxCollider>();
@@ -57,14 +70,55 @@ public class TPCharacter : MonoBehaviour {
 
 
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    IEnumerator Footsteps()
+    {
+        if (!m_isSprinting && !isOverPuddle)
+        {
+            TimeBetweenFootsteps = 0.3f;
+            int r = Random.Range(0, NormalSteps.Count - 1);
+            srcSFX.PlayOneShot(NormalSteps[r]);
+        }
+        else if (isOverPuddle)
+        {
+            TimeBetweenFootsteps = 0.3f;
+            int r = Random.Range(0, WaterSteps.Count - 1);
+            srcSFX.PlayOneShot(WaterSteps[r]);
+        }
+        else
+        {
+            TimeBetweenFootsteps = 0.2f;
+            int r = Random.Range(0, RunningSteps.Count - 1);
+            srcSFX.PlayOneShot(RunningSteps[r]);
+        }
+
+        yield return null;
+    }
+
+    // Update is called once per frame
+    void Update () {
         m_NormForward = RotateX(transform.GetChild(0).GetChild(0).forward, -40);
+
+        if (m_move.x > 0 || m_move.z > 0 || m_move.x < 0 || m_move.z < 0)
+        {
+            elapsedTimeFootstep += Time.deltaTime;
+
+            if (elapsedTimeFootstep > TimeBetweenFootsteps)
+            {
+                StartCoroutine(Footsteps());
+                elapsedTimeFootstep = 0;
+            }
+        }
+        else
+        {
+            elapsedTimeFootstep = 0;
+        }
     }
 
     public void Move(Vector3 move, bool crouch, bool jump, bool sprint, GameObject target)
     {
+        m_move = move;
+        m_isSprinting = sprint;
         m_Target = target;
         // convert the world relative moveInput vector into a local-relative
         // turn amount and forward amount required to head in the desired
@@ -79,7 +133,7 @@ public class TPCharacter : MonoBehaviour {
         CheckGroundStatus();
 
         //ApplyExtraTurnRotation();
-
+       
         // control and velocity handling is different when grounded and airborne:
         if (m_IsGrounded)
         {
@@ -315,5 +369,21 @@ public class TPCharacter : MonoBehaviour {
         }
         
         yield return null;
-    }   
+    }
+
+    void OnTriggerEnter(Collider obj)
+    {
+        if(obj.CompareTag("Puddle"))
+        {
+            isOverPuddle = true;
+        }
+    }
+
+    void OnTriggerExit(Collider obj)
+    {
+        if (obj.CompareTag("Puddle"))
+        {
+            isOverPuddle = false;
+        }
+    }
 }

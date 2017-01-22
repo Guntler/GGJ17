@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 466300}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,7 +23,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 470026}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skeleton_Foot_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 413560}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skeleton_UpperLeg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 420900}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 409138}
   - component: {fileID: 3377984}
   - component: {fileID: 2333952}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 497016}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skeleton_Foot_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 471446}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Locator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 407286}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skeleton_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 416764}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Goal (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,8 +148,13 @@ GameObject:
   - component: {fileID: 5409520}
   - component: {fileID: 13677238}
   - component: {fileID: 11489380}
-  - component: {fileID: 11410858}
-  m_Layer: 0
+  - component: {fileID: 82341331928139022}
+  - component: {fileID: 114445135348252012}
+  - component: {fileID: 136173998941977756}
+  - component: {fileID: 114396992250382362}
+  - component: {fileID: 114379788041300816}
+  - component: {fileID: 114202327485042064}
+  m_Layer: 10
   m_Name: MainCharacter
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -164,7 +169,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 410768}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Locator_Leg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +184,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 421064}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FullBodyIK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +199,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 446538}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skeleton_Arm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +214,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 435904}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skeleton_Spine02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +229,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 412068}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skeleton_ForeArm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +244,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 437874}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skeleton_UpperLeg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +263,7 @@ GameObject:
   - component: {fileID: 12476872}
   - component: {fileID: 9273310}
   - component: {fileID: 8123798}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -273,7 +278,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 424152}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Locator_Leg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +293,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 479616}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpVector_Leg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 484704}
   - component: {fileID: 13783068}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sword02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +324,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 475274}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skeleton_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +339,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 451836}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skeleton_Leg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 419354}
   - component: {fileID: 11126676}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cha_Knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +370,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 424870}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skeleton_Leg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +385,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 452974}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skeleton_Arm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +400,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 481310}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Group Locator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +415,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 461340}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Texture Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +430,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 407644}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpVector_Leg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,7 +445,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 476078}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skeleton_ForeArm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,7 +460,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 406792}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skeleton_Hand_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 483878}
   - component: {fileID: 13792090}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,7 +491,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 485130}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skeleton_Hand_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +506,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 441486}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FullBodyIK (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +521,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 485082}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skeleton_Spine01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,7 +535,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126560}
   m_LocalRotation: {x: -0.34202018, y: 0, z: 0, w: 0.9396926}
-  m_LocalPosition: {x: -4.778471, y: 0.5706001, z: 1.2948565}
+  m_LocalPosition: {x: -8.81, y: 1.39, z: -4.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 419354}
@@ -939,7 +944,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.080000006, z: 0}
+  m_LocalPosition: {x: -0, y: 2.81, z: 2.43}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 481310}
@@ -1017,9 +1022,9 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967039
@@ -1118,25 +1123,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &11410858
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 126560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cf7effeefc532746bc9d4e1b833f834, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MovingTurnSpeed: 1500
-  m_StationaryTurnSpeed: 1500
-  m_JumpPower: 100
-  m_GravityMultiplier: 2
-  m_RunCycleLegOffset: 0.2
-  m_MoveSpeedMultiplier: 1
-  m_AnimSpeedMultiplier: 1
-  m_GroundCheckDistance: 0.2
 --- !u!114 &11489380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1149,6 +1135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AttackCooldown: 0.7
+  isMonster: 0
   WaveSpawner: {fileID: 1112813273196784, guid: 1d847f665fb6f4545af184f84088ee79,
     type: 2}
   BaseSpawnInterval: 0.2
@@ -1303,3 +1290,217 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 126560}
   m_IsPrefabParent: 1
+--- !u!82 &82341331928139022
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126560}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 0
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0.002
+      value: 1
+      inSlope: -500.20065
+      outSlope: -500.20065
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.046128605
+      value: 0.58486646
+      inSlope: -125.05016
+      outSlope: -125.05016
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.07895344
+      value: 0.47195846
+      inSlope: -31.26254
+      outSlope: -31.26254
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.10025721
+      value: 0.45793772
+      inSlope: -7.815635
+      outSlope: -7.815635
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.12164967
+      value: 0.18792656
+      inSlope: -0.4884772
+      outSlope: -0.4884772
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.13686919
+      value: 0.20820661
+      inSlope: -0.1221193
+      outSlope: -0.1221193
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.14951663
+      value: 0.18653563
+      inSlope: -1.9539088
+      outSlope: -1.9539088
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.256
+      value: 0.0078125
+      inSlope: -0.030529825
+      outSlope: -0.030529825
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.512
+      value: 0.00390625
+      inSlope: -0.0076324563
+      outSlope: -0.0076324563
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0.002
+      inSlope: -0.002000801
+      outSlope: -0.002000801
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &114202327485042064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf7effeefc532746bc9d4e1b833f834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MovingTurnSpeed: 1500
+  m_StationaryTurnSpeed: 1500
+  m_JumpPower: 100
+  m_GravityMultiplier: 2
+  m_RunCycleLegOffset: 0.2
+  m_MoveSpeedMultiplier: 1
+  m_AnimSpeedMultiplier: 1
+  m_GroundCheckDistance: 0.2
+  NormalSteps:
+  - {fileID: 8300000, guid: 5f89c2dea3f8c8344bef2271408739b0, type: 3}
+  - {fileID: 8300000, guid: ed082de87efc45342a3588e4f6756126, type: 3}
+  - {fileID: 8300000, guid: 2923c2312f89c6544ad060bc37b24187, type: 3}
+  - {fileID: 8300000, guid: 7344c76d0a9244647a360fa2693e3eeb, type: 3}
+  RunningSteps:
+  - {fileID: 8300000, guid: 40583a02aff42854a82282123f9cb3d3, type: 3}
+  - {fileID: 8300000, guid: 87317c56b4d03444596affadedffbf2d, type: 3}
+  - {fileID: 8300000, guid: 477ff84fa7e230d498ace1429c530c94, type: 3}
+  WaterSteps:
+  - {fileID: 8300000, guid: d40d11f439351ee43bb654b47d926f1b, type: 3}
+  - {fileID: 8300000, guid: 2b538708b8f75eb46bfd7046d2412d0b, type: 3}
+  - {fileID: 8300000, guid: e639a8f3780a26545a71da5342b63bed, type: 3}
+  isOverPuddle: 0
+--- !u!114 &114379788041300816
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b3c91701293cd45b2b3c5a28ddb640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 1988966079968796, guid: a395a9ec422bc5a428ea3b3859d91d52, type: 2}
+  ReloadTime: 4
+  HasBullet: 1
+  BulletSpeed: 1
+--- !u!114 &114396992250382362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe32756dabb19b4d8bed7cf05a13a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 10
+--- !u!114 &114445135348252012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd59e37831578a0419df894abe6fa27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LookaheadRate: 2
+  MaxLookahead: 2.5
+--- !u!136 &136173998941977756
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126560}
+  m_Material: {fileID: 13400000, guid: 4023600d05c6c6647a52205a0ab42da2, type: 2}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1.4
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.68, z: 0}

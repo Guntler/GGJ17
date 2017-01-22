@@ -17,13 +17,31 @@ public class LungeComponent : MonoBehaviour {
     private Vector3 m_CamForward;
     private Vector3 lastDir = new Vector3(0, 0, 1);
 
+    public List<AudioClip> RoarSFX = new List<AudioClip>();
+    public List<AudioClip> LungingSteps = new List<AudioClip>();
+    public List<AudioClip> ChargeImpactSFX = new List<AudioClip>();
+
+    AudioSource srcSFX;
+
+    float TimeBetweenFootsteps = 0.8f;
+    float elapsedTimeFootstep = 0;
+
+    IEnumerator Footsteps()
+    {
+        
+
+        yield return null;
+    }
+
     // Use this for initialization
     void Start () {
         m_Cam = Camera.main.transform;
+        srcSFX = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
 	void Update () {
+        elapsedTimeFootstep += Time.deltaTime;
         var lungeDir = Vector3.zero;
         // read inputs
         float h = Input.GetAxis("Horizontal_Mnst") * 5f;
@@ -45,7 +63,13 @@ public class LungeComponent : MonoBehaviour {
 
         if (Lunging)
         {
-            print(gameObject.tag);
+            if(elapsedTimeFootstep > TimeBetweenFootsteps)
+            {
+                int r = Random.Range(0, LungingSteps.Count - 1);
+                srcSFX.PlayOneShot(LungingSteps[r]);
+                elapsedTimeFootstep = 0;
+            }
+
             var rigid = gameObject.GetComponent<Rigidbody>();
 
             lungeDirection.Normalize();
@@ -61,6 +85,8 @@ public class LungeComponent : MonoBehaviour {
         }
         else if(Input.GetButtonDown("Fire2") && !Charging)
         {
+            int r = Random.Range(0, RoarSFX.Count - 1);
+            srcSFX.PlayOneShot(RoarSFX[r]);
             Charging = true;
             elapsedTime = 0;
         }
@@ -79,7 +105,8 @@ public class LungeComponent : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        print("collided");
+        int r = Random.Range(0, ChargeImpactSFX.Count - 1);
+        srcSFX.PlayOneShot(ChargeImpactSFX[r]);
         if (Lunging && other.gameObject.GetComponent<HealthBehaviour>() != null)
             other.gameObject.GetComponent<HealthBehaviour>().Health -= Damage;
         Lunging = false;
