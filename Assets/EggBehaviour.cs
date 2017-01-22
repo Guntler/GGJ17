@@ -5,6 +5,7 @@ using UnityEngine;
 public class EggBehaviour : MonoBehaviour {
 
     public GameObject Egg;
+    public GameObject DropOff;
     private bool pickedUp;
 
 	// Use this for initialization
@@ -22,6 +23,9 @@ public class EggBehaviour : MonoBehaviour {
         if (obj.CompareTag("Player") && !pickedUp)
         {
             pickedUp = true;
+            Egg.GetComponent<EggBehavior>().IsActive = false;
+            DropOff.GetComponent<EggBehavior>().IsActive = true;
+
             var follow = Egg.AddComponent<FollowPlayer>();
             Egg.transform.localScale = Egg.transform.localScale * 0.5f;
             Egg.AddComponent<FloatEggBehaviour>();

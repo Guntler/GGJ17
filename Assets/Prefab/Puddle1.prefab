@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 82500337460436178}
   - component: {fileID: 65287434261153362}
   - component: {fileID: 54662679206270954}
+  - component: {fileID: 114474793392759286}
   m_Layer: 12
   m_Name: Puddle1
   m_TagString: Puddle
@@ -82,7 +83,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8454301150b59d142930e9b2c48dbd1d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.24
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -168,6 +169,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114474793392759286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1009661174412068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bb0e982cd0f024695da762e5d8f50b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Wave: {fileID: 1101378130528358, guid: 28ee0b52d85d0cf4b9289d48bfd606c9, type: 2}
+  TimeToLive: -1
+  SpawnInterval: 0.3
+  WaveTimeToLive: 0.5
+  WaveExpandRate: 1
+  Origin: {fileID: 0}
 --- !u!212 &212079460127700000
 SpriteRenderer:
   m_ObjectHideFlags: 1
