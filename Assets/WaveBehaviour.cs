@@ -8,6 +8,9 @@ public class WaveBehaviour : MonoBehaviour {
     public float ExpandRate;
     public GameObject Spawner;
 
+    [HideInInspector]
+    public bool ResetToOrigin = true;
+
     private float elapsedTime = 0;
 	// Use this for initialization
 	void Start () {
@@ -16,6 +19,7 @@ public class WaveBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        transform.localRotation = new Quaternion(0, 0, 0, 0);
         elapsedTime += Time.deltaTime;
 
 		if(elapsedTime > TimeToLive)
@@ -26,8 +30,10 @@ public class WaveBehaviour : MonoBehaviour {
         float newScaleX = transform.localScale.x + Time.deltaTime * ExpandRate * transform.localScale.x;
         float newScaleZ = transform.localScale.z + Time.deltaTime * ExpandRate * transform.localScale.z;
         transform.localScale = new Vector3(newScaleX, transform.localScale.y, newScaleZ);
-
-        if (Spawner != null)
-            transform.position = Spawner.transform.position;
+        if (ResetToOrigin)
+        {
+            if (Spawner != null)
+                transform.position = Spawner.transform.position;
+        }
 	}
 }

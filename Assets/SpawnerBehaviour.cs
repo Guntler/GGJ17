@@ -6,10 +6,10 @@ public class SpawnerBehaviour : MonoBehaviour
 {
 
     public GameObject Wave;
-    public float TimeToLive;
-    public float SpawnInterval;
-    public float WaveTimeToLive;
-    public float WaveExpandRate;
+    public float TimeToLive = 0.5f;
+    public float SpawnInterval = 0.4f;
+    public float WaveTimeToLive = 0.3f;
+    public float WaveExpandRate = 1.1f;
     public GameObject Origin;
 
     private float elapsedTime = 0;
@@ -71,7 +71,7 @@ public class SpawnerBehaviour : MonoBehaviour
         }
     }
 
-    private void SpawnWave()
+    protected virtual void SpawnWave()
     {
         GameObject waveObject = Instantiate(Wave, transform.position, transform.rotation) as GameObject;
         var behaviour = waveObject.GetComponent<WaveBehaviour>();
