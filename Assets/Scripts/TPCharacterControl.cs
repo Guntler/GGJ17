@@ -19,10 +19,14 @@ public class TPCharacterControl : MonoBehaviour {
     Quaternion originalCamRot;
     private float m_AttackCooldownCount = 0.0f;
 
+    public float SprintCooldown;
+    public float SprintDuration;
     public bool isMonster = false;
     public GameObject WaveSpawner;
     public float BaseSpawnInterval = 0.5f;
     private float elapsedTime = 0;
+    private float sprintTime = 0;
+    private float sprintCooldownTime = 0;
 
     public float m_CameraLockOnSpeed = 5.0f;
     // Use this for initialization
@@ -55,12 +59,30 @@ public class TPCharacterControl : MonoBehaviour {
             m_Jump = Input.GetButtonDown("Jump");
         }
 
-        if (Input.GetButtonDown("Sprint") && !isMonster)
+        if(m_Sprint)
+        {
+            sprintTime += Time.deltaTime;
+
+            if(sprintTime > SprintDuration)
+            {
+                m_Sprint = false;
+                sprintTime = 0;
+            }
+        }
+        else
+        {
+            sprintCooldownTime += Time.deltaTime;
+        }
+
+        if (Input.GetButtonDown("Sprint") && !isMonster && sprintCooldownTime > SprintCooldown)
         {
             m_Sprint = true;
+            sprintCooldownTime = 0;
         }
         else if(Input.GetButtonUp("Sprint") && !isMonster)
         {
+            if(m_Sprint)
+                sprintCooldownTime = 0;
             m_Sprint = false;
         }
 

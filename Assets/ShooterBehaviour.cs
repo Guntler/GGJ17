@@ -8,6 +8,7 @@ public class ShooterBehaviour : MonoBehaviour {
     public float ReloadTime;
     public bool HasBullet = true;
     public float BulletSpeed;
+    public GameObject BulletMask;
 
     private float elapsedTime;
     private Transform m_Cam;
@@ -50,12 +51,17 @@ public class ShooterBehaviour : MonoBehaviour {
             var bulletPos = new Vector3(transform.position.x, 1, transform.position.z);
 
             GameObject bullet = Instantiate(Bullet, bulletPos + new Vector3(lastDir.x, 0, lastDir.z), transform.rotation) as GameObject;
+            GameObject mask = Instantiate(BulletMask, bulletPos + new Vector3(lastDir.x, 0, lastDir.z), new Quaternion()) as GameObject;
+
+            mask.GetComponent<FollowPlayer>().Target = bullet;
+            mask.GetComponent<FollowPlayer>().Offset = new Vector3(0, 0, -0.6f);
 
             var behaviour = bullet.GetComponent<BulletBehaviour>();
 
             behaviour.Direction = new Vector2(lastDir.x, lastDir.z);
             behaviour.Speed = BulletSpeed;
             behaviour.Shooter = gameObject;
+            behaviour.Mask = mask;
         }
         else if(!HasBullet && elapsedTime > ReloadTime)
         {

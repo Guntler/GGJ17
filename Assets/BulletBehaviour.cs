@@ -7,6 +7,7 @@ public class BulletBehaviour : MonoBehaviour {
     public GameObject Shooter;
     public Vector2 Direction;
     public float Speed;
+    public GameObject Mask;
 
 	// Use this for initialization
 	void Start () {
@@ -30,5 +31,6 @@ public class BulletBehaviour : MonoBehaviour {
         }
 
         Destroy(gameObject);
+        Destroy(Mask);
     }
 }

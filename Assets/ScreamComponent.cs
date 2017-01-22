@@ -5,6 +5,10 @@ using UnityEngine;
 public class ScreamComponent : MonoBehaviour {
 
     public List<AudioClip> RoarSFX = new List<AudioClip>();
+    public float Cooldown;
+    public GameObject WaveSpawner;
+
+    private float elapsedTime;
 
     AudioSource srcSFX;
 
@@ -15,7 +19,19 @@ public class ScreamComponent : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        elapsedTime += Time.deltaTime;
+
+        if(elapsedTime > Cooldown && Input.GetButtonDown("Scream"))
+        {
+            var spawner = Instantiate(WaveSpawner, transform.position, transform.rotation) as GameObject;
+            var behaviour = spawner.GetComponent<SpawnerBehaviour>();
+
+            behaviour.WaveTimeToLive = 5;
+            behaviour.TimeToLive = 3;
+            behaviour.WaveExpandRate = 1.3f;
+            DoScream();
+            elapsedTime = 0;
+        }
 	}
 
     void DoScream()
