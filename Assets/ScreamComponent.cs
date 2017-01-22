@@ -7,8 +7,10 @@ public class ScreamComponent : MonoBehaviour {
     public List<AudioClip> RoarSFX = new List<AudioClip>();
     public float Cooldown;
     public GameObject WaveSpawner;
+    public GameObject Collider;
 
     private float elapsedTime;
+    private GameObject collider;
 
     AudioSource srcSFX;
 
@@ -30,7 +32,23 @@ public class ScreamComponent : MonoBehaviour {
             behaviour.TimeToLive = 3;
             behaviour.WaveExpandRate = 1.3f;
             DoScream();
+
+            collider = Instantiate(Collider, transform.position, transform.rotation);
+            collider.transform.localScale = new Vector3(1, 1, 1);
+            collider.tag = "Scream";
+            
+
             elapsedTime = 0;
+        }
+
+        if(collider != null)
+        {
+            collider.transform.localScale *= 1.02f; 
+
+            if(elapsedTime > 5)
+            {
+                Destroy(collider);
+            }
         }
 	}
 

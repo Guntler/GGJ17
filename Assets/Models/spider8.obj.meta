@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: 81707eae4f47203459c40eaa07530be7
-timeCreated: 1485050041
+guid: ad1c022dbb0a3294ea040c5d4baa8a5b
+timeCreated: 1485082089
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: polySurface3_pCube5
+    100000: default
     100002: //RootNode
-    400000: polySurface3_pCube5
+    400000: default
     400002: //RootNode
-    2300000: polySurface3_pCube5
-    3300000: polySurface3_pCube5
-    4300000: polySurface3_pCube5
+    2300000: default
+    3300000: default
+    4300000: default
   materials:
     importMaterials: 1
     materialName: 0

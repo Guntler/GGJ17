@@ -24,9 +24,12 @@ public class TPCharacterControl : MonoBehaviour {
     public bool isMonster = false;
     public GameObject WaveSpawner;
     public float BaseSpawnInterval = 0.5f;
+    public float StunTime = 2f;
     private float elapsedTime = 0;
     private float sprintTime = 0;
     private float sprintCooldownTime = 0;
+    private float elapsedStunTime = 0;
+    private bool isStunned = false;
 
     public float m_CameraLockOnSpeed = 5.0f;
     // Use this for initialization
@@ -54,6 +57,17 @@ public class TPCharacterControl : MonoBehaviour {
             elapsedTime = 0;
         }
 
+        if(isStunned)
+        {
+            elapsedStunTime += Time.deltaTime;
+
+            if(elapsedStunTime > StunTime)
+            {
+                isStunned = false;
+                elapsedStunTime = 0;
+            }
+        }
+
         if (!m_Jump)
         {
             m_Jump = Input.GetButtonDown("Jump");
@@ -74,7 +88,7 @@ public class TPCharacterControl : MonoBehaviour {
             sprintCooldownTime += Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Sprint") && !isMonster && sprintCooldownTime > SprintCooldown)
+        if (Input.GetButtonDown("Sprint") && !isMonster && !isStunned && sprintCooldownTime > SprintCooldown)
         {
             m_Sprint = true;
             sprintCooldownTime = 0;
@@ -228,31 +242,36 @@ public class TPCharacterControl : MonoBehaviour {
             }
             //print(m_Move);
             // pass all parameters to the character control script
-            m_Character.Move(m_Move, crouch, m_Jump, m_Sprint, m_Target);
-            if (h != 0 || v != 0)
+
+            if(!isStunned)
             {
-                if(m_Target != null)
+                m_Character.Move(m_Move, crouch, m_Jump, m_Sprint, m_Target);
+                if (h != 0 || v != 0)
                 {
-                    //TODO play cautious animation
-                    m_Animation.Play("Walk");
+                    if (m_Target != null)
+                    {
+                        //TODO play cautious animation
+                        m_Animation.Play("Walk");
+                    }
+                    else
+                    {
+                        m_Animation.Play("Walk");
+                    }
                 }
                 else
                 {
-                    m_Animation.Play("Walk");
+                    if (m_Target != null)
+                    {
+                        //TODO play cautious animation
+                        m_Animation.Play("Wait");
+                    }
+                    else
+                    {
+                        m_Animation.Play("Wait");
+                    }
                 }
             }
-            else
-            {
-                if (m_Target != null)
-                {
-                    //TODO play cautious animation
-                    m_Animation.Play("Wait");
-                }
-                else
-                {
-                    m_Animation.Play("Wait");
-                }
-            }
+            
             m_Jump = false;
         }
     }
@@ -261,5 +280,15 @@ public class TPCharacterControl : MonoBehaviour {
     {
         yield return new WaitForSeconds(seconds);
         yield break;
+    }
+
+
+    void OnTriggerEnter(Collider obj)
+    {
+        if (obj.CompareTag("Scream") && !isMonster)
+        {
+            isStunned = true;
+            elapsedStunTime = 0;
+        }
     }
 }
