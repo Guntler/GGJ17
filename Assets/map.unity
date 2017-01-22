@@ -2216,7 +2216,7 @@ GameObject:
   - component: {fileID: 334798200}
   - component: {fileID: 334798199}
   - component: {fileID: 334798202}
-  m_Layer: 17
+  m_Layer: 18
   m_Name: DropoffArea
   m_TagString: DropoffArea
   m_Icon: {fileID: 0}
@@ -3736,7 +3736,6 @@ GameObject:
   - component: {fileID: 554392585}
   - component: {fileID: 554392584}
   - component: {fileID: 554392583}
-  - component: {fileID: 554392587}
   m_Layer: 11
   m_Name: Ground
   m_TagString: Untagged
@@ -3809,18 +3808,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &554392587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 554392582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e1386495e8edaf4fb38da0cf3800c38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Egg: {fileID: 0}
 --- !u!1 &554463881
 GameObject:
   m_ObjectHideFlags: 0
@@ -9525,7 +9512,7 @@ GameObject:
   - component: {fileID: 1255562943}
   - component: {fileID: 1255562942}
   - component: {fileID: 1255562941}
-  m_Layer: 16
+  m_Layer: 17
   m_Name: PickupArea
   m_TagString: PickupArea
   m_Icon: {fileID: 0}
@@ -9769,11 +9756,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1660570503246026, guid: 8903421581c5dd341857391ff7397265, type: 2}
       propertyPath: m_Layer
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1200439709680686, guid: 8903421581c5dd341857391ff7397265, type: 2}
       propertyPath: m_Layer
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114062336514464836, guid: 8903421581c5dd341857391ff7397265, type: 2}
@@ -13626,6 +13613,11 @@ Prefab:
         type: 2}
       propertyPath: m_Depth
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20316915580531454, guid: 2be9999d9188828449fe997a9a3de6fe,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2be9999d9188828449fe997a9a3de6fe, type: 2}

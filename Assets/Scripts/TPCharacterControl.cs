@@ -86,7 +86,7 @@ public class TPCharacterControl : MonoBehaviour {
             elapsedTime = 0;
         }
 
-        if(!GetComponent<ShooterBehaviour>().HasBullet)
+        if(!isMonster && !GetComponent<ShooterBehaviour>().HasBullet)
         {
             if (reloadEmoteIdx == -1)
             {
@@ -105,85 +105,93 @@ public class TPCharacterControl : MonoBehaviour {
         }
         else
         {
-            Destroy(emotes[reloadIdx]);
-            reloadEmoteIdx = -1;
-        }
-
-        if(multiEmoteTimer > multiEmoteDelay)
-        {
-            int intCounts = 0;
-            if (stunEmoteIdx != -1)
-                intCounts++;
-            if (sprintEmoteIdx != -1)
-                intCounts++;
-            if (tiredEmoteIdx != -1)
-                intCounts++;
-            if (reloadEmoteIdx != -1)
-                intCounts++;
-
-            print(intCounts);
-            if(intCounts > 1)
+            if (!isMonster)
             {
-                currentActiveIndex++;
-                if (currentActiveIndex > emotes.Length - 1)
-                    currentActiveIndex = 0;
-                while (emotes[currentActiveIndex] == null)
+                Destroy(emotes[reloadIdx]);
+                reloadEmoteIdx = -1;
+            }
+        }
+        if (!isMonster)
+        {
+            if (multiEmoteTimer > multiEmoteDelay)
+            {
+                int intCounts = 0;
+                if (stunEmoteIdx != -1)
+                    intCounts++;
+                if (sprintEmoteIdx != -1)
+                    intCounts++;
+                if (tiredEmoteIdx != -1)
+                    intCounts++;
+                if (reloadEmoteIdx != -1)
+                    intCounts++;
+
+                print(intCounts);
+                if (intCounts > 1)
                 {
-                    intCounts = 0;
-                    if (stunEmoteIdx != -1)
-                        intCounts++;
-                    if (sprintEmoteIdx != -1)
-                        intCounts++;
-                    if (tiredEmoteIdx != -1)
-                        intCounts++;
-                    if (reloadEmoteIdx != -1)
-                        intCounts++;
-
-                    if (intCounts == 0)
-                        break;
-
-                    if (emotes[currentActiveIndex] == null)
-                        currentActiveIndex++;
-                    else
-                        break;
+                    currentActiveIndex++;
                     if (currentActiveIndex > emotes.Length - 1)
                         currentActiveIndex = 0;
-                }
-                if (currentActiveIndex > emotes.Length - 1)
-                    currentActiveIndex = 0;
-                for (int i = 0; i < emotes.Length; i++)
-                {
-                    if (i != currentActiveIndex && emotes[i] != null)
-                        emotes[i].SetActive(false);
-                    else
+                    while (emotes[currentActiveIndex] == null)
                     {
-                        if (emotes[i] != null)
-                            emotes[i].SetActive(true);
+                        intCounts = 0;
+                        if (stunEmoteIdx != -1)
+                            intCounts++;
+                        if (sprintEmoteIdx != -1)
+                            intCounts++;
+                        if (tiredEmoteIdx != -1)
+                            intCounts++;
+                        if (reloadEmoteIdx != -1)
+                            intCounts++;
+
+                        if (intCounts == 0)
+                            break;
+
+                        if (emotes[currentActiveIndex] == null)
+                            currentActiveIndex++;
+                        else
+                            break;
+                        if (currentActiveIndex > emotes.Length - 1)
+                            currentActiveIndex = 0;
+                    }
+                    if (currentActiveIndex > emotes.Length - 1)
+                        currentActiveIndex = 0;
+                    for (int i = 0; i < emotes.Length; i++)
+                    {
+                        if (i != currentActiveIndex && emotes[i] != null)
+                            emotes[i].SetActive(false);
+                        else
+                        {
+                            if (emotes[i] != null)
+                                emotes[i].SetActive(true);
+                        }
                     }
                 }
+                multiEmoteTimer = 0;
             }
-            multiEmoteTimer = 0;
-        }
-        else
-        {
-            multiEmoteTimer += Time.deltaTime;
+            else
+            {
+                multiEmoteTimer += Time.deltaTime;
+            }
         }
 
         if (isStunned)
         {
-            if (stunEmoteIdx == -1)
+            if(!isMonster)
             {
-                GameObject emote = (GameObject)Instantiate(EmoteStunnedQuad, transform);
-                emote.transform.parent = transform;
-                emote.transform.localPosition = new Vector3(0, 6.1f, 4.44f);
-                emotes[stunIdx] = emote;
-                stunEmoteIdx = stunIdx;
-            }
-            else
-            {
-                Color c = emotes[stunEmoteIdx].GetComponent<SpriteRenderer>().color;
-                c = new Color(c.r, c.g, c.b, (elapsedStunTime / StunTime));
-                emotes[stunEmoteIdx].GetComponent<SpriteRenderer>().color = c;
+                if (stunEmoteIdx == -1)
+                {
+                    GameObject emote = (GameObject)Instantiate(EmoteStunnedQuad, transform);
+                    emote.transform.parent = transform;
+                    emote.transform.localPosition = new Vector3(0, 6.1f, 4.44f);
+                    emotes[stunIdx] = emote;
+                    stunEmoteIdx = stunIdx;
+                }
+                else
+                {
+                    Color c = emotes[stunEmoteIdx].GetComponent<SpriteRenderer>().color;
+                    c = new Color(c.r, c.g, c.b, 1-(elapsedStunTime / StunTime));
+                    emotes[stunEmoteIdx].GetComponent<SpriteRenderer>().color = c;
+                }
             }
 
             elapsedStunTime += Time.deltaTime;
@@ -211,50 +219,61 @@ public class TPCharacterControl : MonoBehaviour {
 
             if(sprintTime > SprintDuration)
             {
+                Destroy(emotes[sprintIdx]);
+                sprintEmoteIdx = -1;
                 m_Sprint = false;
                 sprintTime = 0;
             }
         }
         else
         {
-            if (tiredEmoteIdx == -1)
+            if(!isMonster)
             {
-                GameObject emote = (GameObject)Instantiate(EmoteTiredQuad, transform);
-                emote.transform.parent = transform;
-                emote.transform.localPosition = new Vector3(0, 6.1f, 4.44f);
-                emotes[tiredIdx] = emote;
-                tiredEmoteIdx = tiredIdx;
-            }
-            else
-            {
-                Color c1 = emotes[tiredEmoteIdx].GetComponent<SpriteRenderer>().color;
-                c1 = new Color(c1.r, c1.g, c1.b, (SprintCooldown/sprintCooldownTime));
-                emotes[tiredEmoteIdx].GetComponent<SpriteRenderer>().color = c1;
+                if (tiredEmoteIdx == -1)
+                {
+                    GameObject emote = (GameObject)Instantiate(EmoteTiredQuad, transform);
+                    emote.transform.parent = transform;
+                    emote.transform.localPosition = new Vector3(0, 6.1f, 4.44f);
+                    emotes[tiredIdx] = emote;
+                    tiredEmoteIdx = tiredIdx;
+                }
+                else
+                {
+                    Color c1 = emotes[tiredEmoteIdx].GetComponent<SpriteRenderer>().color;
+                    c1 = new Color(c1.r, c1.g, c1.b, 1- (sprintCooldownTime/ SprintCooldown));
+                    emotes[tiredEmoteIdx].GetComponent<SpriteRenderer>().color = c1;
+                }
             }
             
             sprintCooldownTime += Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Sprint") && !isMonster && !isStunned && SprintCooldown > sprintCooldownTime)
+        if(sprintCooldownTime > SprintCooldown)
         {
-            if (sprintEmoteIdx == -1)
-            {
-                GameObject emote = (GameObject)Instantiate(EmoteSprintingQuad, transform);
-                emote.transform.parent = transform;
-                emote.transform.localPosition = new Vector3(0, 6.1f, 4.44f);
-                emotes[sprintIdx] = emote;
-                sprintEmoteIdx = sprintIdx;
-            }
             Destroy(emotes[tiredIdx]);
             tiredEmoteIdx = -1;
+        }
+
+        if (Input.GetButtonDown("Sprint") && !isMonster && !isStunned && sprintCooldownTime > SprintCooldown)
+        {
+            if (!isMonster)
+            {
+                if (sprintEmoteIdx == -1)
+                {
+                    GameObject emote = (GameObject)Instantiate(EmoteSprintingQuad, transform);
+                    emote.transform.parent = transform;
+                    emote.transform.localPosition = new Vector3(0, 6.1f, 4.44f);
+                    emotes[sprintIdx] = emote;
+                    sprintEmoteIdx = sprintIdx;
+                }
+            }
+
             m_Sprint = true;
             sprintCooldownTime = 0;
-            Destroy(currentEmoteQuad);
-            currentEmote = null;
-            currentEmoteQuad = null;
         }
         else if(Input.GetButtonUp("Sprint") && !isMonster)
         {
+            Destroy(emotes[sprintIdx]);
             sprintEmoteIdx = -1;
             if (m_Sprint)
                 sprintCooldownTime = 0;
@@ -412,11 +431,13 @@ public class TPCharacterControl : MonoBehaviour {
                     if (m_Target != null)
                     {
                         //TODO play cautious animation
-                        m_Animation.Play("Walk");
+                        if (!isMonster)
+                            m_Animation.Play("Walk");
                     }
                     else
                     {
-                        m_Animation.Play("Walk");
+                        if (!isMonster)
+                            m_Animation.Play("Walk");
                     }
                 }
                 else
@@ -424,11 +445,13 @@ public class TPCharacterControl : MonoBehaviour {
                     if (m_Target != null)
                     {
                         //TODO play cautious animation
-                        m_Animation.Play("Wait");
+                        if (!isMonster)
+                            m_Animation.Play("Wait");
                     }
                     else
                     {
-                        m_Animation.Play("Wait");
+                        if(!isMonster)
+                            m_Animation.Play("Wait");
                     }
                 }
             }

@@ -9,6 +9,9 @@ TagManager:
   - Monster
   - Bullet
   - Scream
+  - Egg
+  - PickupArea
+  - DropoffArea
   layers:
   - Default
   - TransparentFX
@@ -26,9 +29,9 @@ TagManager:
   - Scream
   - Monster
   - Emote
-  - 
-  - 
-  - 
+  - Egg
+  - PickupArea
+  - DropoffArea
   - 
   - 
   - 
