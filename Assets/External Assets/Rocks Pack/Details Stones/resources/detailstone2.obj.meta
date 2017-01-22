@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 6e58e5b4e0ddaeb4f80cb3fff91c1fec
-timeCreated: 1485089867
+guid: df7ec0dd540993f40befed6c9718f415
+timeCreated: 1485089548
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -12,8 +12,9 @@ ModelImporter:
     2300000: polySurface2_polySurface1
     3300000: polySurface2_polySurface1
     4300000: polySurface2_polySurface1
+    11100000: //RootNode
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -36,7 +37,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.5
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -50,11 +51,11 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
-    tangentImportMode: 3
+    normalSmoothAngle: 180
+    normalImportMode: 1
+    tangentImportMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -72,9 +73,9 @@ ModelImporter:
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 1
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

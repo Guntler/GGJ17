@@ -5,12 +5,13 @@ using UnityEngine;
 public class ShooterBehaviour : MonoBehaviour {
 
     public GameObject Bullet;
-    public float ReloadTime;
+    public float ReloadTime = 4;
     public bool HasBullet = true;
     public float BulletSpeed;
     public GameObject BulletMask;
 
-    private float elapsedTime;
+    [HideInInspector]
+    public float elapsedTime;
     private Transform m_Cam;
     private Vector3 m_CamForward;
     private Vector3 lastDir = new Vector3(0, 0, 1);

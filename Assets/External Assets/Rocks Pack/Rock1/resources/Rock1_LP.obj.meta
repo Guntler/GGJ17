@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: cbac7143f7e08754dbfe4ea4a7e2cebd
-timeCreated: 1485089868
+guid: 2eb9f3337c0b6f8478b791c6c7a21940
+timeCreated: 1485089539
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -12,8 +12,10 @@ ModelImporter:
     2300000: default
     3300000: default
     4300000: default
+    6400000: default
+    11100000: //RootNode
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -38,7 +40,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -50,11 +52,11 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
-    tangentImportMode: 3
+    normalSmoothAngle: 180
+    normalImportMode: 1
+    tangentImportMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -72,9 +74,9 @@ ModelImporter:
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 1
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

@@ -1134,11 +1134,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b03e9b72d6e534da938f33d4b8d5d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EmoteReloadQuad: {fileID: 1412145790964226, guid: 7eee460da7e89564b8ee40c333e800bc,
+    type: 2}
+  EmoteStunnedQuad: {fileID: 1940886287626812, guid: a266a0664a890ac4dbbcb08dd2c5fa56,
+    type: 2}
+  EmoteSprintingQuad: {fileID: 1793424254952060, guid: 9992c12a2b65baa4b8e4d6fd2726c69c,
+    type: 2}
+  EmoteTiredQuad: {fileID: 1822904106532760, guid: afd050195ed8c2047bcfb6e05c893cef,
+    type: 2}
   m_AttackCooldown: 0.7
+  SprintCooldown: 5
+  SprintDuration: 0
   isMonster: 0
   WaveSpawner: {fileID: 1112813273196784, guid: 1d847f665fb6f4545af184f84088ee79,
     type: 2}
   BaseSpawnInterval: 0.2
+  StunTime: 2
   m_CameraLockOnSpeed: 5
 --- !u!124 &12476872
 Behaviour:
@@ -1466,6 +1477,8 @@ MonoBehaviour:
   ReloadTime: 4
   HasBullet: 1
   BulletSpeed: 1
+  BulletMask: {fileID: 1201225804786772, guid: 4e36873257214f74cac3ef055f59eafb, type: 2}
+  elapsedTime: 0
 --- !u!114 &114396992250382362
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -9,6 +9,7 @@ public class IntroBehavior : MonoBehaviour {
     public Image SplashScreen;
     public Canvas Canvas;
 
+    public AudioClip TitleTheme;
     public AudioClip IntroVoice;
 
     AudioSource src;
@@ -41,7 +42,10 @@ public class IntroBehavior : MonoBehaviour {
             {
                 SplashScreen.color = new Color(1,1,1,SplashScreen.color.a + Time.deltaTime*0.5f);
                 if (SplashScreen.color.a >= 1.0f)
+                {
+                    src.PlayOneShot(IntroVoice);
                     showedSplashScreenP1 = true;
+                }
             }
         }
         else
@@ -58,7 +62,9 @@ public class IntroBehavior : MonoBehaviour {
                     EggDirectional.intensity += Time.deltaTime * 10.0f;
                     if (EggDirectional.intensity >= 3 && EggDirectional.intensity < 4)
                     {
-                        src.PlayOneShot(IntroVoice);
+                        src.clip = TitleTheme;
+                        src.loop = true;
+                        src.Play();
                         Canvas.gameObject.SetActive(true);
 
                     }

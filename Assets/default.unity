@@ -267,6 +267,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 20316915580531454, guid: 2be9999d9188828449fe997a9a3de6fe,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2be9999d9188828449fe997a9a3de6fe, type: 2}
   m_IsPrefabParent: 0
@@ -847,7 +852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &552653353
 MeshRenderer:
   m_ObjectHideFlags: 0
