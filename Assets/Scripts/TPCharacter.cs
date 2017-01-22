@@ -95,7 +95,7 @@ public class TPCharacter : MonoBehaviour {
            if (sprint)
             {
                 m_Rigidbody.velocity += move * 5f;
-                m_Rigidbody.velocity = Vector3.ClampMagnitude(m_Rigidbody.velocity, 15.0f);
+                m_Rigidbody.velocity = Vector3.ClampMagnitude(m_Rigidbody.velocity, 10.0f);
             }
            else
             {

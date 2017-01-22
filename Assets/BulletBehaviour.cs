@@ -27,7 +27,6 @@ public class BulletBehaviour : MonoBehaviour {
         if(other.gameObject.GetComponent<HealthBehaviour>() != null)
         {
             other.gameObject.GetComponent<HealthBehaviour>().Health--;
-            print("atingiu");
         }
 
         Destroy(gameObject);

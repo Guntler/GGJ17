@@ -42,8 +42,8 @@ public class SpawnerBehaviour : MonoBehaviour
                 firstUpdate = false;
             }
 
-            WaveTimeToLive = defaultWaveTimeToLive + velocity.magnitude * 0.02f;
-            WaveExpandRate = defaultWaveExpandRate + defaultWaveExpandRate + velocity.magnitude * 0.1f;
+            WaveTimeToLive = defaultWaveTimeToLive + velocity.magnitude * 0.15f;
+            WaveExpandRate = defaultWaveExpandRate + velocity.magnitude * 0.01f;
 
 
             if (elapsedTime > SpawnInterval && velocity.magnitude > 0.1)

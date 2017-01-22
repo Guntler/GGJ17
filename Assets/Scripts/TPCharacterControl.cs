@@ -44,8 +44,8 @@ public class TPCharacterControl : MonoBehaviour {
             var spawner = Instantiate(WaveSpawner, spawnerPos, new Quaternion(0, 0, 0, 0)) as GameObject;
 
             var behaviour = spawner.GetComponent<SpawnerBehaviour>();
-            behaviour.WaveTimeToLive += behaviour.WaveTimeToLive * speed * 0.1f;
-            behaviour.WaveExpandRate += behaviour.WaveExpandRate * speed * 0.1f;
+            behaviour.WaveTimeToLive += behaviour.WaveTimeToLive * speed * 0.5f;
+            behaviour.WaveExpandRate += behaviour.WaveExpandRate * speed * 0.02f;
             elapsedTime = 0;
         }
 

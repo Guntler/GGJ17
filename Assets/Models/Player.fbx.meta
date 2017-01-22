@@ -1,0 +1,238 @@
+fileFormatVersion: 2
+guid: 9bda4498827dd8c458a88a9731f98971
+timeCreated: 1485037891
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: back
+    100002: Goal
+    100004: 'Goal '
+    100006: group
+    100008: Group Locator
+    100010: joint49
+    100012: joint50
+    100014: joint51
+    100016: joint52
+    100018: joint53
+    100020: joint54
+    100022: joint55
+    100024: joint56
+    100026: joint57
+    100028: joint58
+    100030: joint59
+    100032: joint60
+    100034: joint62
+    100036: joint63
+    100038: joint64
+    100040: joint69
+    100042: joint70
+    100044: joint71
+    100046: joint72
+    100048: Knight
+    100050: Knight1
+    100052: Locator
+    100054: pasted__back
+    100056: pasted__Goal
+    100058: 'pasted__Goal '
+    100060: pasted__Group Locator
+    100062: pasted__imagePlane1
+    100064: pasted__Knight
+    100066: pasted__Knight1
+    100068: pasted__Locator
+    100070: pasted__polySurface1
+    100072: pasted__polySurface3
+    100074: pasted__polySurface3 1
+    100076: pasted__Root
+    100078: pasted__Texture Group
+    100080: pasted__transform1
+    100082: pasted__transform2
+    100084: pasted__transform3
+    100086: pasted__transform4
+    100088: pasted__UpVector_Leg_L
+    100090: pasted__UpVector_Leg_R
+    100092: //RootNode
+    100094: polySurface1
+    100096: polySurface10
+    100098: polySurface11
+    100100: polySurface12
+    100102: polySurface13
+    100104: polySurface14
+    100106: polySurface15
+    100108: polySurface2
+    100110: polySurface3
+    100112: polySurface4
+    100114: polySurface5
+    100116: polySurface8
+    100118: polySurface8 1
+    100120: polySurface9
+    100122: Root
+    100124: Texture Group
+    100126: transform1
+    100128: transform10
+    100130: transform11
+    100132: transform12
+    100134: transform13
+    100136: transform14
+    100138: transform15
+    100140: transform16
+    100142: transform2
+    100144: transform3
+    100146: transform4
+    100148: transform5
+    100150: transform6
+    100152: transform7
+    100154: transform8
+    100156: transform9
+    100158: UpVector_Leg_L
+    100160: UpVector_Leg_R
+    400000: back
+    400002: Goal
+    400004: 'Goal '
+    400006: group
+    400008: Group Locator
+    400010: joint49
+    400012: joint50
+    400014: joint51
+    400016: joint52
+    400018: joint53
+    400020: joint54
+    400022: joint55
+    400024: joint56
+    400026: joint57
+    400028: joint58
+    400030: joint59
+    400032: joint60
+    400034: joint62
+    400036: joint63
+    400038: joint64
+    400040: joint69
+    400042: joint70
+    400044: joint71
+    400046: joint72
+    400048: Knight
+    400050: Knight1
+    400052: Locator
+    400054: pasted__back
+    400056: pasted__Goal
+    400058: 'pasted__Goal '
+    400060: pasted__Group Locator
+    400062: pasted__imagePlane1
+    400064: pasted__Knight
+    400066: pasted__Knight1
+    400068: pasted__Locator
+    400070: pasted__polySurface1
+    400072: pasted__polySurface3
+    400074: pasted__polySurface3 1
+    400076: pasted__Root
+    400078: pasted__Texture Group
+    400080: pasted__transform1
+    400082: pasted__transform2
+    400084: pasted__transform3
+    400086: pasted__transform4
+    400088: pasted__UpVector_Leg_L
+    400090: pasted__UpVector_Leg_R
+    400092: //RootNode
+    400094: polySurface1
+    400096: polySurface10
+    400098: polySurface11
+    400100: polySurface12
+    400102: polySurface13
+    400104: polySurface14
+    400106: polySurface15
+    400108: polySurface2
+    400110: polySurface3
+    400112: polySurface4
+    400114: polySurface5
+    400116: polySurface8
+    400118: polySurface8 1
+    400120: polySurface9
+    400122: Root
+    400124: Texture Group
+    400126: transform1
+    400128: transform10
+    400130: transform11
+    400132: transform12
+    400134: transform13
+    400136: transform14
+    400138: transform15
+    400140: transform16
+    400142: transform2
+    400144: transform3
+    400146: transform4
+    400148: transform5
+    400150: transform6
+    400152: transform7
+    400154: transform8
+    400156: transform9
+    400158: UpVector_Leg_L
+    400160: UpVector_Leg_R
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
